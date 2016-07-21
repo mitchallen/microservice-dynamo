@@ -1,3 +1,8 @@
+/**
+    Module: @mitchallen/microservice-dynamo
+    Author: Mitch Allen
+*/
+
 "use strict";
 
 module.exports = function(spec) {
