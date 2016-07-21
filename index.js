@@ -3,25 +3,27 @@
     Author: Mitch Allen
 */
 
+/*jslint es6 */
+
 "use strict";
 
-module.exports = function(spec) {
+module.exports = function (spec) {
 
-    var AWS = require('aws-sdk'),
-        dynamoConfig = require('./dynamo-config'),
-        credentials = dynamoConfig.credentials;
+    let AWS = require('aws-sdk');
+    let dynamoConfig = require('./dynamo-config');
+    let credentials = dynamoConfig.credentials;
 
-    AWS.config.update( credentials );
- 
-    var connection = {
+    AWS.config.update(credentials);
+
+    let connection = {
         dynamo: new AWS.DynamoDB(),
         docClient: new AWS.DynamoDB.DocumentClient()
-    }
+    };
 
-    var options = {
+    let options = {
         service: spec,
-        connection: connection,
-    }
+        connection: connection
+    };
 
     return require('@mitchallen/microservice-core')(options);
 };
