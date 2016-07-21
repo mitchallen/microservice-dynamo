@@ -17,6 +17,12 @@ You must use __npm__ __2.7.0__ because of the scoped package name.
 
 Provides AWS DynamoDB access to a microservice.
 
+### Example
+
+You can find a working example here:
+
+* [https://bitbucket.org/mitchallen/microservice-demo-table-list](https://bitbucket.org/mitchallen/microservice-demo-table-list)
+
 * * *
 
 ## Testing
@@ -46,6 +52,8 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 * Ran jslint against index.js and dynamo-config.js
 * Added bitbucket to repo listing
+* Updated aws-sdk and @mitchallen/microservice-core dependencies
+* Added link to working example in README
 
 #### Version 0.1.0 release notes
 
