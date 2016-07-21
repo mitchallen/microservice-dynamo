@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "description": "microservice module for connecting to AWS DynamoDB",
   "main": "index.js",
-"scripts": {
+  "scripts": {
     "test": "mocha --recursive --timeout 5000",
     "//": "To use: npm run test-nodemon (assumes global location of mocha)",
     "test-nodemon": "nodemon /usr/local/bin/mocha --timeout 5000"
   },
   "author": "Mitch Allen <npm@mitchallen.com> (http://mitchallen.com)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@mitchallen/microservice-core": "^0.1.0"
+  }
 }
