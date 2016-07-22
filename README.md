@@ -88,7 +88,7 @@ The returned value is the core module - which returns the handle to the server c
 You can find working examples in the examples folder of the git repo.
 
 * __examples / table-list__ - demos how to read a list of tables in the DynamoDB
-* __examples / music-post__ - demos how to post a record to the DynamoDB (see README for script to create Music table)
+* __examples / music-post__ - demos how to post a record to the DynamoDB (see music-post README for script to create Music table)
 
 You can also find a working example here:
 
