@@ -85,7 +85,12 @@ The returned value is the core module - which returns the handle to the server c
 
 ### Example
 
-You can find a working example here:
+You can find working examples in the examples folder of the git repo.
+
+* __examples / table-list__ - demos how to read a list of tables in the DynamoDB
+* __examples / music-post__ - demos how to post a record to the DynamoDB (see README for script to create Music table)
+
+You can also find a working example here:
 
 * [https://bitbucket.org/mitchallen/microservice-demo-table-list](https://bitbucket.org/mitchallen/microservice-demo-table-list)
 
@@ -113,6 +118,11 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.1.5 release notes
+
+* Added examples in the git repo
+* Updated the README
 
 #### Version 0.1.4 release notes
 
