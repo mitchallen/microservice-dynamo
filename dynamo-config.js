@@ -19,7 +19,7 @@ config.credentials = {
     process.env.DYNAMO_REGION             || "local-test",
   endpoint: 
     process.env.DYNAMO_HOST 
-      || 'http://localhost:' + config.dynamoPort,
+      || ('http://localhost:' + config.dynamoPort),
 };
 
 module.exports = config;
