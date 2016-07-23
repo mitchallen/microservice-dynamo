@@ -27,14 +27,19 @@ var service = {
                 console.log(JSON.stringify(req.body));
             } 
 
-            docClient.put(req.body, function(err, data) {
+            var doc = {
+                "TableName":"Music",
+                "Item": req.body
+            };
+
+            docClient.put(doc, function(err, data) {
                 if (err) {
                     console.error("POST / DB.PUT Error JSON:", JSON.stringify(err, null, 2));
                     res
                         .status(500)
                         .send(err);
                 } else {
-                    var docId = req.body.Item.CatalogID || 'undefined';
+                    var docId = req.body.CatalogID || 'undefined';
                     res
                         .location( req.originalUrl + '/' + docId )
                         .status(201)    // Created

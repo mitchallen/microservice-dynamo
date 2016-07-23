@@ -1,10 +1,7 @@
 {
-    "TableName":"Music",
-    "Item": {
-        "CatalogID": "b123",
-        "Artist":"The Beatles",
-        "SongTitle":"Abbey Road",
-        "Album": "Octopus's Garden",
-        "Price": 9.99
-    }
+    "CatalogID": "b123",
+    "Artist":"The Beatles",
+    "SongTitle":"Abbey Road",
+    "Album": "Octopus's Garden",
+    "Price": 8.99
 }

@@ -1,7 +1,7 @@
 {
   "name": "music-post",
-  "version": "1.0.0",
-  "description": "examples / music-post =====================",
+  "version": "1.0.1",
+  "description": "examples / music-post",
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive --timeout 20000"
@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@mitchallen/microservice-dynamo": "^0.1.4",
-    "supertest": "^1.2.0"
+    "@mitchallen/microservice-dynamo": "^0.2.1"
   }
 }

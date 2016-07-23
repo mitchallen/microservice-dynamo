@@ -24,7 +24,8 @@ describe('music post smoke test', function() {
         // Needed for cleanup between tests
         var modulePath = '../index';
         delete require.cache[require.resolve(modulePath)];
-        server = require(modulePath);  // Start POST service
+        var retObj = require(modulePath);  // Start POST service
+        server = retObj.server;
     });
 
     afterEach(function(done) {
@@ -34,14 +35,11 @@ describe('music post smoke test', function() {
     it('should confirm that post works', function (done) {
         var testUrl = "/v1/music";
         testObject = {
-            "TableName":"Music",
-            "Item": {
-                "CatalogID": "b" + myRandom(1000, 1000000),
-                "Artist":"The Beatles",
-                "SongTitle":"Abbey Road",
-                "Album": "Octopus's Garden",
-                "Price": myRandom(4, 15) + 0.79
-            }
+            "CatalogID": "b" + myRandom(1000, 1000000),
+            "Artist":"The Beatles",
+            "SongTitle":"Abbey Road",
+            "Album": "Octopus's Garden",
+            "Price": myRandom(4, 15) + 0.79
         };
         request(testHost)
             .post(testUrl)
@@ -50,10 +48,8 @@ describe('music post smoke test', function() {
             .expect(201)
             .end(function (err, res) {
                 should.not.exist(err);
-                should.exist(res.body.TableName)
-                res.body.TableName.should.eql(testObject.TableName);
-                should.exist(res.body.Item.CatalogID);
-                res.body.Item.CatalogID.should.eql(testObject.Item.CatalogID);
+                should.exist(res.body.CatalogID);
+                res.body.CatalogID.should.eql(testObject.CatalogID);
                 done();
             });
     });
