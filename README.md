@@ -73,7 +73,7 @@ In the above example you can substitute __dynamo__ with __docClient__ to use doc
     
 ### Pass the Service Object to the microservice-dynamo module:
 
-Note that this is different from the core module where you wrapped it in an object.
+Pass the __service__ object that you define to the module:
 
     require('@mitchallen/microservice-dynamo')(service);
     
@@ -81,7 +81,20 @@ Or if you want to export the returned value:
 
     module.exports = require('@mitchallen/microservice-dynamo')(service);
     
-The returned value is the core module - which returns the handle to the server created by an [ExpressJS](http://expressjs.com/) called to __app.listen__. This was so that I could close the server in the unit tests. 
+#### Return Value
+The object returned by the module contains a __server__ field:
+
+    { server: server }
+
+It's a pointer to the express modules server. If you are familiar with express, it's the value returned by __app.listen__. You don't need to actually return anything. 
+
+It was handy for me to use the __close__ method in the unit tests so I wouldn't get port-in-use errors. It's also used internally when the module unexpectedly terminates.
+
+Here is an example of how to create it, then use the server return value to close it (checking for null omitted for brevity):
+
+    var obj = require('@mitchallen/microservice-dynamo')(options);
+    var server = obj.server;
+    server.close();
 
 ### Example
 
@@ -119,6 +132,11 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Version History
 
+#### Version 0.2.1 release notes
+
+* Bumped minor version because broke backward compatibility
+* Using new core module that now returns __{ server: server }__ instead of just __server__.
+
 #### Version 0.1.5 release notes
 
 * Added examples in the git repo
@@ -131,7 +149,7 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 #### Version 0.1.3 release notes
 
-* (skipped)
+* (skipped to sync with core version)
 
 #### Version 0.1.2 release notes
 
