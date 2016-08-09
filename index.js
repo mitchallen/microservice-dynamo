@@ -10,8 +10,19 @@
 module.exports = function (spec) {
 
     let AWS = require('aws-sdk');
-    let dynamoConfig = require('./dynamo-config');
-    let credentials = dynamoConfig.credentials;
+
+    let dynamoPort = process.env.DYNAMO_PORT || 8000;
+
+    let credentials = {
+        accessKeyId:
+                process.env.DYNAMO_ACCESS_KEY_ID || "local-test",
+        secretAccessKey:
+                process.env.DYNAMO_SECRET_ACCESS_KEY || "local-test",
+        region:
+                process.env.DYNAMO_REGION || "local-test",
+        endpoint:
+                process.env.DYNAMO_HOST || ('http://localhost:' + dynamoPort)
+    };
 
     AWS.config.update(credentials);
 
