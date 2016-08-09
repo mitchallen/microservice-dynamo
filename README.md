@@ -132,6 +132,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Version History
 
+#### Version 0.2.3 release notes
+
+* merged dynamo-config.js into index.js
+
 #### Version 0.2.2 release notes
 
 * Updated to use latest core
@@ -145,10 +149,6 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 * Added examples in the git repo
 * Updated the README
-
-#### Version 0.1.5 release notes
-
-* merged dynamo-config.js into index.js
 
 #### Version 0.1.4 release notes
 
