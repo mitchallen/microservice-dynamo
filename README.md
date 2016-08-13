@@ -120,6 +120,7 @@ To test, go to the root folder and type (sans __$__):
 ## Repo(s)
 
 * [bitbucket.org/mitchallen/microservice-dynamo.git](https://bitbucket.org/mitchallen/microservice-dynamo.git)
+* [github.com/mitchallen/microservice-dynamo.git](https://github.com/mitchallen/microservice-dynamo.git)
 
 * * *
 
