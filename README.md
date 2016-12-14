@@ -77,13 +77,13 @@ Pass the __service__ object that you define to the module:
 
     var dynamo = require('@mitchallen/microservice-dynamo');
     
-    var service = { ... }; 
+    var options = { ... }; 
     
-    dynamo.Service(service);
+    dynamo.Service(options);
     
 Or if you want to export the returned value:
 
-    module.exports = require('@mitchallen/microservice-dynamo')(service);
+    module.exports = dyamo.Service(service);
     
 #### Return Value
 The object returned by the module contains a __server__ field:
@@ -136,6 +136,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.3.3 release notes
+
+* Fixed documentation error
 
 #### Version 0.3.2 release notes
 
