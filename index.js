@@ -3,11 +3,14 @@
     Author: Mitch Allen
 */
 
+/*jshint node: true */
 /*jshint esversion: 6 */
 
 "use strict";
 
-module.exports = function (spec) {
+var core = require('@mitchallen/microservice-core');
+
+module.exports.Service = function (spec) {
 
     let AWS = require('aws-sdk');
 
@@ -36,5 +39,5 @@ module.exports = function (spec) {
         connection: connection
     };
 
-    return require('@mitchallen/microservice-core')(options);
+    return core.Service(options);
 };

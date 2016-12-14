@@ -4,17 +4,45 @@
     Author: Mitch Allen
 */
 
+/*jshint node: true */
+/*jshint esversion: 6 */
+
 "use strict";
 
 var request = require('supertest'),
     should = require('should'),
+    modulePath = "../index",
     testName = require("../package").name,
     testVersion = require("../package").version,
     verbose = process.env.TEST_VERBOSE || false,
     testPort = process.env.TEST_SERVICE_PORT || 8200,
     testHost = "http://localhost:" + testPort;
 
-describe('dynamo service smoke test', function() {
+describe('dynamo service', function() {
+
+    var _module = null;
+
+    before(function(done) {
+        // Call before all tests
+        delete require.cache[require.resolve(modulePath)];
+        _module = require(modulePath);
+        done();
+    });
+
+    after(function(done) {
+        // Call after all tests
+        done();
+    });
+
+    beforeEach(function(done) {
+        // Call before each test
+        done();
+    });
+
+    afterEach(function(done) {
+        // Call after eeach test
+        done();
+    });
 
       it('should not throw an error', function(done) {
         var options = {
@@ -28,10 +56,8 @@ describe('dynamo service smoke test', function() {
                 return router;
             }
         }
-        var modulePath = '../index';
-        // Needed for cleanup between tests
-        delete require.cache[require.resolve(modulePath)];
-        var obj = require(modulePath)(options);
+
+        var obj = _module.Service(options);
         should.exist(obj);
         var server = obj.server;
         should.exist(server);
@@ -72,10 +98,7 @@ describe('dynamo service smoke test', function() {
             }
         }
         
-        var modulePath = '../index';
-        // Needed for cleanup between tests
-        delete require.cache[require.resolve(modulePath)];
-        var obj = require(modulePath)(options);
+        var obj = _module.Service(options);
         should.exist(obj);
         var server = obj.server;
         should.exist(server);

@@ -75,7 +75,11 @@ In the above example you can substitute __dynamo__ with __docClient__ to use doc
 
 Pass the __service__ object that you define to the module:
 
-    require('@mitchallen/microservice-dynamo')(service);
+    var dynamo = require('@mitchallen/microservice-dynamo');
+    
+    var service = { ... }; 
+    
+    dynamo.Service(service);
     
 Or if you want to export the returned value:
 
@@ -92,7 +96,7 @@ It was handy for me to use the __close__ method in the unit tests so I wouldn't 
 
 Here is an example of how to create it, then use the server return value to close it (checking for null omitted for brevity):
 
-    var obj = require('@mitchallen/microservice-dynamo')(options);
+    var obj = dynamo.Service(options);
     var server = obj.server;
     server.close();
 
@@ -132,6 +136,11 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.3.1 release notes
+
+* Bumped minor version because broke backward compatibility
+* Options must now be passed to __Service__ method
 
 #### Version 0.2.3 release notes
 
