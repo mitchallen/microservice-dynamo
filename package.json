@@ -1,6 +1,6 @@
 {
   "name": "@mitchallen/microservice-dynamo",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "microservice module for connecting to AWS DynamoDB",
   "main": "index.js",
   "scripts": {
