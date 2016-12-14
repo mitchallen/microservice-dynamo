@@ -1,5 +1,8 @@
 "use strict";
 
+var dmod = require('@mitchallen/microservice-dynamo'),
+    urlPath = "/table/list";
+
 var service = {
     
     name: require("./package").name,
@@ -15,7 +18,7 @@ var service = {
         var router = info.router,
             dynamo = info.connection.dynamo;
 
-        router.get( '/table/list', function (req, res) {
+        router.get( urlPath, function (req, res) {
 
             dynamo.listTables(function (err, data) {
                 if( err ) {
@@ -35,4 +38,8 @@ var service = {
     }
 };
 
-module.exports = require('@mitchallen/microservice-dynamo')(service);
+console.log(
+    "GET URL: http://localhost:%d%s%s", 
+    service.port, service.apiVersion, urlPath );
+
+module.exports = dmod.Service(service);

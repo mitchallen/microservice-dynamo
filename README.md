@@ -107,7 +107,7 @@ You can find working examples in the examples folder of the git repo.
 * __examples / table-list__ - demos how to read a list of tables in the DynamoDB
 * __examples / music-post__ - demos how to post a record to the DynamoDB (see music-post README for script to create Music table)
 
-You can also find a working example here:
+You can also find a working example here (may or may not be up to date - check version numbers):
 
 * [https://bitbucket.org/mitchallen/microservice-demo-table-list](https://bitbucket.org/mitchallen/microservice-demo-table-list)
 
@@ -136,6 +136,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.3.2 release notes
+
+* Updated examples to use latest package
 
 #### Version 0.3.1 release notes
 
