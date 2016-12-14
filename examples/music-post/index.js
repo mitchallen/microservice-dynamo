@@ -3,7 +3,12 @@
     Author: Mitch Allen
 */
 
+/*jshint node: true */
+/*jshint esversion: 6 */
+
 "use strict";
+
+var dynamo = require('@mitchallen/microservice-dynamo');
 
 var service = {
     
@@ -53,4 +58,4 @@ var service = {
     }
 };
 
-module.exports = require('@mitchallen/microservice-dynamo')(service);
+module.exports = dynamo.Service(service);
